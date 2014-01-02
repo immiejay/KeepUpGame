@@ -14,7 +14,7 @@ function Update () {
     //transform.position.z = (Input.mousePosition.y - halfHeight)/halfHeight;
 
     //^Commented out because if both these scripts are attached to the paddle, leap motion is ignored
-    // and it will only move the Y axis. Eventually this script will be integrated into the LeapFollow.cs 
+    // and it will only move the Y axis 
 
     // Smoothly tilts a transform towards a target rotation.
     var tiltAroundZ = Input.GetAxis("Mouse X") * tiltAngle * 2;

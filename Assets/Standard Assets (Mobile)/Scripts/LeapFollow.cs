@@ -27,19 +27,12 @@ public class LeapFollow : MonoBehaviour {
 	}
 
 	void MovePaddle (Hand hand) {
-		if (hand.PalmPosition.ToUnityScaled().z > 0) {
-			transform.position += transform.forward * 0.1f;
-		}
-		
-		if (hand.PalmPosition.ToUnityScaled().z < -1.0f) {
-			transform.position -= transform.forward * 0.04f;
-		}
+		transform.position = hand.PalmPosition.ToUnityScaled();
 	}
 
     void FixedUpdate () {
 		Hand foremostHand = GetForeMostHand();
 		if (foremostHand != null) {
-    	print("hi");
 			MovePaddle(foremostHand);
 		}
 	}
